@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Template - Directives</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- CSS import -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <style lang="">
+        ul {
+            list-style-type: disc;
+        }
+
+        span {
+            font-size: 3em;
+            border: 1px dashed blue;
+            padding: 10px 20px;
+            margin: 5px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <xmp>
+        Javascritp for 대해서 학습한다.
+
+        Object Arrary를 바인딩하는 방법 학습.
+        Object Arrary 예시)
+        var objarray = [
+            { text: 'One', value: 'A' },
+            { text: 'Two', value: 'B' },
+            { text: 'Three', value: 'C' }
+        ];
+
+    </xmp>
+</body>
+
+</html>
+<script>
+        var objarray = [
+            { text: 'One', value: 'A' },
+            { text: 'Two', value: 'B' },
+            { text: 'Three', value: 'C' }
+        ];
+
+        //1. 추가
+        objarray[objarray.length-1] = {text : 'Four',value : 'B'};
+        objarray.push({text:'Four',value:'B'});
+
+        //2.수정
+        objarray[1] = { text : '2',value : '2'}; // 새로운객체로 대체( vue,react에서 사용해야함)
+        objarray[1].text = '2'  //기존의 객체에 값만 수정
+        objarray[1].value = '2'
+
+        //3. 삭제
+        //objarray.pop();//배열의 마지막만 삭제가능
+        objarray.splice(2,1);
+        //delete 연산자는 에러처리에 어려움이 있어서 사용하지 않음
+
+        //4. 찾기
+        //절차형
+        var arrOne = [];
+        for(i in objarray){
+            if( objarray[i].text=="One"){
+                arrOne.push(objarray[i]);
+            }
+        };
+        console.log(arrOne);
+        //함수형
+        var arrOne2 = objarray.filter(function(item,index){
+            if(item.text=="One"){
+                return true;
+            }else{
+                return false;
+            }
+        // }).map(function(item,index){
+        //      item['price'] = 0;
+        });
+        console.log(arrOne2);
+
+
+</script>
+
