@@ -55,8 +55,23 @@
         + Render functions
         + JSX
         + *SFC(Single-file components)*
+         ```
+         <style scoped></style>
+         ```
+    - 1개의 root element만 가질 수 있다. (2개 이상이면 div로 감싼다.) 
 
-* dfdfdfdf
- 
-```
+ * 디렉티브 directive
+    - 종류
+       + **v-if**
+       + v-else-if
+       + v-else
+       + v-show
+       + **v-for**
+       + **{{}}**
+       + v-text
+       + v-html
+       + **v-on**
+       + **v-bind**
+       + **v-model**
+```   
 ```
