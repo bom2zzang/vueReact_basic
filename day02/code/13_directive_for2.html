@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Sample</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- CSS import -->
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+
+<body>
+    <pre>
+
+      v-for 지시자를 사용하여 자신이 좋아하는 가수들을 출력하는 테이블을 작성하여 본다.
+    </pre>
+    <hr>
+
+    <div id="app" class="col-md-10 offset-md-1">
+        
+        <table id="list" class="table-bordered">
+            <thead>
+                <tr class="bg-warning text-white text-center">
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>전화번호</th>
+                    <th>주소</th>
+                </tr>
+            </thead>
+            <tbody id="contacts">
+                <tr v-for="(contact , i ) in contacts" v-bind:key="i">
+                    <td>{{i+1}}</td>
+                    <td>{{contact.name}}</td>
+                    <td>{{contact.tel}}</td>
+                    <td>{{contact.address}}</td>
+                </tr>
+                <tr>
+                    <td><button v-on:click="addBtn">추가</button></td>
+                    <td><input v-model:value="nm"></td>
+                    <td><input v-model:value="tel"></td>
+                    <td><input v-model:value="addr"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="app2" class="col-md-10 offset-md-1">
+        <label for="">이름 </label><input v-model:value="nm">
+        <label for="">전화번호 </label><input v-model:value="tel">
+        <label for="">주소 </label><input v-model:value="addr">
+        <button v-on:click="addBtn">추가</button>
+        <table id="list" class="table-bordered">
+            <thead>
+                <tr class="bg-warning text-white text-center">
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>전화번호</th>
+                    <th>주소</th>
+                </tr>
+            </thead>
+            <tbody id="contacts">
+                <tr v-for="(contact , i ) in contacts" v-bind:key="i">
+                    <td>{{i+1}}</td>
+                    <td>{{contact.name}}</td>
+                    <td>{{contact.tel}}</td>
+                    <td>{{contact.address}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    
+
+</body>
+
+</html>
+
+<!-- vue 플러그인 임포트   -->
+
+<!-- vue 플러그인 임포트   -->
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js">/* vue 플러그인 임포트 */</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"> /* JSX를 자바스크립트로 변환 */</script>
+<script src="https://unpkg.com/vuex@3.3.0/dist/vuex.js"> /* vuex 플러그인 임포트 */</script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"> /* axios 플러그인 임포트 */</script>
+<script src="https://unpkg.com/vue-router@3.1.6/dist/vue-router.js"> /* vue 라우터 플러그인 임포트 */</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> /* jQuery library */</script>
+<script>
+    new Vue({
+        /* edtmc^2w */
+        el: "#app",
+        data: {
+            nm : "",
+            tel:"",
+            addr:"",
+            contacts : [
+            {name:"설현",tel:"010-4564",address:"집"},
+            {name:"혜리",tel:"010-4334",address:"집2"},
+            {name:"수지",tel:"010-4111",address:"집3"},
+            ],
+        },
+        //template: ``,
+        methods: {
+            addBtn : function(event){
+                // console.log(event);
+                // var data = {name:"rr",tel:"010-dfs",address:"집4"}
+                // this.$set(this.$data.contacts,this.$data.contacts.length,data);
+                var data = {name:this.$data.nm,tel:this.$data.tel,address:this.$data.addr}
+                 this.$set(this.$data.contacts,this.$data.contacts.length,data);
+                this.$data.nm = "";
+                 this.$data.tel = "";
+                 this.$data.addr = "";
+            }
+        },
+
+    });
+
+    new Vue({
+        /* edtmc^2w */
+        el: "#app2",
+        data: {
+            nm : "",
+            tel:"",
+            addr:"",
+            contacts : [
+            {name:"설현",tel:"010-4564",address:"집"},
+            {name:"혜리",tel:"010-4334",address:"집2"},
+            {name:"수지",tel:"010-4111",address:"집3"},
+            ],
+        },
+        //template: ``,
+        methods: {
+            addBtn : function(event){
+                // console.log(event);
+                //유효성검사
+                //객체생성
+                var data = {name:this.$data.nm,tel:this.$data.tel,address:this.$data.addr}
+                //추가
+                 this.$set(this.$data.contacts,this.$data.contacts.length,data);
+                 this.$data.nm = "";
+                 this.$data.tel = "";
+                 this.$data.addr = "";
+            }
+        },
+
+    });
+    
+</script>

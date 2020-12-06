@@ -73,5 +73,42 @@
        + **v-on**
        + **v-bind**
        + **v-model**
-```   
-```
+
+ * 데이터 바인딩
+    - 표현식 방식 
+       + {{}}(콧수염ㅋ.ㅋ) : 자바스크립트 사용가능 but 쓰지마라고 하셨다. 
+    - 지시자 방식
+       + v-text
+       + v-html(보안상의이유로 default로 사용하지않음)
+
+ * 이벤트 바인딩
+    - 이벤트 바인딩 지시자
+       + v-on
+       + @
+    - when ___ happens, do ____
+    - DOM 생성시점 : css로딩 이후 생성된다.
+    - 이벤트 핸들러 설정
+       + **인라인 이벤트 모델 (Vue,React)**
+       + 고전 이벤트 모델 (1:1)
+       ```
+         jQuery.click(function(){})
+       ```
+       + 표준 이벤트 모델 (1:N)
+       ```
+         jQuery.on('click dbclikc mouseover',function(){})
+       ```
+    - 이벤트취소
+      + cancleable = true 면 취소! 
+      + stopPropagation()
+      + preventDefault() 
+      + 브라우저마다 먹히는게 다르다. 둘 다 쓰시오.
+
+    - 이벤트객체
+      + 키보드 이벤트
+      + 마우스 이벤트
+   
+    - phase 3단계
+      + capturing : 쭉 내려감
+      + targeting : 버튼 찾음
+      + **bubbling : 버튼 찾아서 window까지 올라옴**
+      + _이벤트 취소는 bubbling 과정 중 이벤트가 위로 올라가지 못하게 하는 것_ 
