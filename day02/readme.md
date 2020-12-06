@@ -41,6 +41,22 @@
     - data속성 값의 변화에 따라 자동으로 연산한다.
     - 캐싱기능이 있다.
 
- * 
+ * 라이프사이클
+    - created > **mounted** > **updated** > destroyed
+        + mounted : 페이지 로딩시 한번만
+        + updated : 리렌더링 될 때마다
+
+ * 템플릿
+    - 만드는 방법
+        + Plain strings : ""
+        + *Template literals : `` (ES6에서 도입된 백틱(`)을 사용)*
+        + x-template
+        + *Inline templates*
+        + Render functions
+        + JSX
+        + *SFC(Single-file components)*
+
+* dfdfdfdf
+ 
 ```
 ```
