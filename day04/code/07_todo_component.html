@@ -402,22 +402,18 @@
         methods: {
 
             addTodo :function(newTodoItem){
-                if(newTodoItem!=null){
-                    var maxId;//최대id찾기
-                    if(this.$data.todoItems.length>0){
-                        maxId = this.$data.todoItems.reduce(function(previtem,nextitem){
-                            return previtem.id > nextitem.id ? previtem.id : nextitem.id;
-                        });
-                    }else{
-                        maxId = 0;
-                    }
-                    var item = { id:maxId+1, todo:newTodoItem,done:false};
-                    // this.$data.todoItems.push(item); >> 문제가 생긴다 
-                    this.$set(this.$data.todoItems,this.$data.todoItems.length,item);
-                    // this.$set(this.$data,"newTodoItem","");
+                var maxId;//최대id찾기
+                if(this.$data.todoItems.length>0){
+                    maxId = this.$data.todoItems.reduce(function(previtem,nextitem){
+                        return previtem.id > nextitem.id ? previtem.id : nextitem.id;
+                    });
                 }else{
-                    this.$set(this.$data,"showModal",true);
+                    maxId = 0;
                 }
+                var item = { id:maxId+1, todo:newTodoItem,done:false};
+                // this.$data.todoItems.push(item); >> 문제가 생긴다 
+                this.$set(this.$data.todoItems,this.$data.todoItems.length,item);
+                // this.$set(this.$data,"newTodoItem","");
             },
             doneToggle : function(id,idx){
                 // this.$emit("doneToggle",id,idx);

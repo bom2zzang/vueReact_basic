@@ -22,7 +22,11 @@
       + state
       + getters
 
- * axios : 외부함수호출
+ * ref
+    - DOM에 직접 접근
+
+ * Vue 서버통신
+    - axios : 외부함수호출
     - vuex의 actions에 넣어서 처리한다.
     ```
     import axios from "axios";
@@ -43,7 +47,16 @@
     });
 
     ``` 
- * ref
-    - DOM에 직접 접근
-    - 
+    
+ * Vue 라우터
+    - vue에는 html이 하나.
+    - 페이지 내 **위치이동** / a태그의 **앵커 기능**
 
+ * |싱글페이지 | 멀티페이지|
+   |:-------:|:----------:|
+   |Single Page Application|Multiple Page Application|
+   
+ * SFC파일구조
+    - 전역 CSS 방식
+    - 범위 CSS 방식
+    - 모듈 CSS 방식
