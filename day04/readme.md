@@ -1,4 +1,4 @@
-# DAY4
+# DAY4✨
 
 > VUE.JS(4/4)
  --- 
@@ -30,7 +30,6 @@
     - vuex의 actions에 넣어서 처리한다.
     ```
     import axios from "axios";
-
     axios({
         url: "./item.html",  // 호출되는 서버 주소.
         method: "get",       // request method: get, post, delete, put
@@ -45,8 +44,7 @@
     .catch((error) => {
         console.log(error);
     });
-
-    ``` 
+    ```
     
  * Vue 라우터
     - vue에는 html이 하나.
@@ -58,5 +56,18 @@
    
  * SFC파일구조
     - 전역 CSS 방식
-    - 범위 CSS 방식
+      + ```<style></style>```
+      + CSS충돌
+    - **범위 CSS 방식**
+      + ```<style scoped></style>```
+      + 느리다, 하위컴포넌트에 적용
+      + 태그에 속성이 자동으로 추가된다
     - 모듈 CSS 방식
+      + ```<style module></style>```
+      + $style로 접근
+  
+ * 🚀 Vue CLI
+    - 설치  
+      + ``` $npm install -g @vue/cli --force```
+      + ```$vue -V```
+      + ```$vue create routerprj01``` 프로젝트생성🎉
