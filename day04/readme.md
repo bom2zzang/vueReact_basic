@@ -71,3 +71,5 @@
       + ``` $npm install -g @vue/cli --force```
       + ```$vue -V```
       + ```$vue create routerprj01``` 프로젝트생성🎉
+   
+ * 꼭 복습!!!!
