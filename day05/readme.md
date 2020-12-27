@@ -137,24 +137,40 @@
       + 화면을 여러 단위로 나눠 개발
 
  * 작성 순서
-   1. 플러그인추가 or 임포트선언
-   2. 리액트 객체 임포트 확인
-   3. 컴포넌트 만들기   ```React.Component```
-   4. DOM에 컴포넌트 주입
+    1. 플러그인추가 or 임포트선언
+    2. 리액트 객체 임포트 확인
+    3. 컴포넌트 만들기   ```React.Component```
+    4. DOM에 컴포넌트 주입
 
  * **JSX 조건문**
  * **JSX 반복문**
-   - for in
-   - for of
-   - **map** : 이어서 뭔가를 더 할 수 있기 때문에 추천..!
+    - for in
+    - for of
+    - **map** : 이어서 뭔가를 더 할 수 있기 때문에 추천..!
 
  * [함수형 프로그래밍 참고](https://www.zerocho.com/category/JavaScript/post/5acafb05f24445001b8d796d)
  
  * Component
-   - 재사용
-   - 화면블록
-   - javascript, css, html 을 한 곳에 넣는다.
-   - 클래스형/함수형/고차(하이어오더)
-   - 단순/복합/사용자
+    - 재사용
+    - 화면블록
+    - javascript, css, html 을 한 곳에 넣는다.
+    - 생성 : 클래스형/함수형/고차(하이어오더)
+    - 화면처리 : 단순/복합/사용자
+    - 패턴 : 컨테이너(클래스형,공유데이터) / 프레젠테이션(함수형,view)
 
+ * 상태관리
+    - props
+       + 읽기 전용
+       + 상태, 메서드, 스타일을 내릴 수 있다.
+    - state
+       + 읽기, 쓰기
+    - redux : 외부객체에 저장하는 방식
 
+ * 생명주기 == 라이프사이클
+    - 마운트 ```componentDidMount```
+      + DOM 노드 생성
+    - 업데이트 ```componentDidUpdate```
+      + DOM 노드 변경
+    - 언마운트 ```componentWillUnmount```
+      + DOM 노드 제거
+      
