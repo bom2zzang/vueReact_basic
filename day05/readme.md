@@ -73,7 +73,14 @@
 
  * 가변 매개변수
     - Variable Parameter
-    - rest(...=)/spread(=...)
+    - rest 연산자(...=)(배열)
+      + **배열을 만들기 위해 사용되는 연산자**
+      + arguments(유사 배열 객체)를 대체 가능
+      + arguments와 본질은 다르나 사용법은 동일함
+
+    - spread 연산자(=...)
+      + **개별요소로 분리할 때 사용**
+      + Array, String, Object, Map, Set 에서만 사용 가능
       ```
       function aaa(...rest){}
       var abc = aaa(...spread);
@@ -100,4 +107,31 @@
     - 객체 분해 할당
       + 이름이 같아야 한다.
       + {분해할당연산자} = {객체리터럴} 
+
+ * 클래스 (Class)
+    - 객체지향 프로그래밍
+    - 클래스 상속 extends
+
+ * React
+    - 싱글 페이지 라이브러리
+    - 빠른 화면 처리
+    - SPA 개발에 유리
+    - WEB+APP
+    - 빌드방식/플러그인방식
    
+ * React 동작원리
+    - Virtual DOM
+      + Component
+      + JSX *(화면)*
+      + render()
+      + 상태관리:state/setState()
+      + JSX코드 > render() 함수 >  실제 DOM트리에 추가
+    - Component
+      + 화면 블락
+      + 화면을 여러 단위로 나눠 개발
+
+ * 작성 순서
+   1. 플러그인추가 or 임포트선언
+   2. 리액트 객체 임포트 확인
+   3. 컴포넌트 만들기   ```React.Component```
+   4. DOM에 컴포넌트 주입
