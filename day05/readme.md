@@ -147,3 +147,14 @@
    - for in
    - for of
    - **map** : 이어서 뭔가를 더 할 수 있기 때문에 추천..!
+
+ * [함수형 프로그래밍 참고](https://www.zerocho.com/category/JavaScript/post/5acafb05f24445001b8d796d)
+ 
+ * Component
+   - 재사용
+   - 화면블록
+   - javascript, css, html 을 한 곳에 넣는다.
+   - 클래스형/함수형/고차(하이어오더)
+   - 단순/복합/사용자
+
+
