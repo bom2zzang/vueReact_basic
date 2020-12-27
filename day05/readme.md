@@ -44,4 +44,60 @@
    - vscode : react / redux 플러그인 설치
    - chrome : react developer tools / redux developer tools
    
- 
+ * es6를 기본 문법으로 사용
+    | ES5 | **ES6(2016)** |ES2018|
+   |:-------:|:----------:|:---:|
+   |var|let/const||
+   |function함수|화살표함수(this)||
+   ||분해할당<br>(Destructure assignment)<br>**[]** =[]/ **{}**={}||
+   ||rest(...=)/spread(=...)||
+   |생성자로 객체 생성|class로 객체 생성<br>(상속,extends)||
+   |콜백|프로미스(Promise>|async, await<br>(redux의 외부라이브러리에서 사용)|
+
+ * Babel 필요
+    - ```<script type="text/babel">```
+
+ * 변수선언
+    - var
+    - let
+      + 읽기쓰기
+    - const
+      + 읽기전용
+
+ * 템플릿 리터럴
+    - 여러줄 문자열
+    - 백틱, `표시
+
+ * 디폴트 매개변수
+    - 함수 호출 시 값을 지정하지 않으면 디폴트 값이 들어간다.
+
+ * 가변 매개변수
+    - Variable Parameter
+    - rest(...=)/spread(=...)
+      ```
+      function aaa(...rest){}
+      var abc = aaa(...spread);
+      ```
+
+   
+ * 화살표 함수 (=>)
+   ```
+      var func1 = function(a,b){
+         return a+b;
+      }
+      let func2 = (a,b) => { return a+b;}
+      let func3 = (a,b) => a+b;
+   ```
+
+ * 개선된 객체 표현식
+    - 생략이 많아짐 *(예제참고)*
+
+ * 분해할당
+    - 배열 분해 할당 
+      + 순서가 같아야 한다.
+      + [분해할당연산자] = [배열리터럴] 
+
+    - 객체 분해 할당
+      + 이름이 같아야 한다.
+      + {분해할당연산자} = {객체리터럴} 
+   

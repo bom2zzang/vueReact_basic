@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <xmp>
+    ES6 코드를 브라우저에서 실행하려면 babel 이 필요하다.
+
+    < script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js">/* ES5로 변환 */</script>
+    < script type="text/babel">
+        // ES6 코딩 
+    </script>
+    </xmp>
+</body>
+</html>
+
+
+
+<!-- react 플러그인 include   -->
+<!-- 주의: 사이트를 배포할 때는 "development.js"를 "production.min.js"로 대체하세요. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js">/* JSX를 자바스크립트로 변환 */</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.12.0/umd/react.development.js"> /* import { React} from "react"; */</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.11.0/umd/react-dom.development.js">/* import { ReactDOM } from "react-dom"; */</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.5/redux.js"> /* import {Redux} from "redux"; */ </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-redux/7.2.2/react-redux.js">/* import {ReactRedux} from "react-redux"; */</script>
+<script type="text/babel">
+    var points = [20,30,40];
+    var x1 = points[0];
+    var y1 = points[1];
+    var z1 = points[2];
+
+    console.log(x1,y1,z1);//20,30,40
+    
+    //분해할당
+    const [x2,y2,z2] = points; 
+    console.log(x2,y2,z2);//20,30,40
+    
+    //두번째 값 무시하기
+    const[x3,,z3] = points;
+    console.log(x3,z3);//20,40
+    
+    //세번째 값 무시하기
+    const[x4,y4] = points;
+    console.log(x4,y4);//20,30
+
+    
+    const car = {
+        type : "t",
+        color : "S",
+        model : 2017
+    }
+
+    //ES5
+    const type1 = car.type;
+    const color1 = car.color;
+    const model1 = car.model;
+
+    //ES6
+    const {type2, color2, model2, gear2} = car;
+    console.log(type2, color2, model2, gear2);// 전부 undefined
+
+    //객체를 분해할당 할 때는 이름이 같아야 한다.
+    const {type, color, model, gear} = car;
+    console.log(type, color, model, gear);
+
+    //다른 이름으로 넣고 싶을 때.
+    let p1 = {name:"홍",age:20,gender:"M"}
+    let {name:n, age:a, gender:g} = p1;
+    console.log(n,a,g);
+
+</script>
