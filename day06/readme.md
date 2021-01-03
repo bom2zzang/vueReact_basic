@@ -38,4 +38,24 @@
  * React 이벤트 객체 **syntheticEvent**
     - [참고](https://reactjs.org/docs/events.html)
 
- 
+ * 상태관리
+    - props : 속성전달 -읽기전용
+    - state : 컴포넌트 변수 선언 (데이터보관) - 읽기쓰기
+
+ * 단방향 데이터 흐름
+
+ * ref (reference)
+    - **입력태그에서 값을 get/set 할 때**
+    - **focus**
+    - 스크롤 박스 조작
+    - canvas에 그림 그릴 때
+    - **부모컴포넌트에서 자식컴포넌트 함수 호출시**
+   
+ * ref 사용법
+    - 콜백 ref방식
+      + ```ref={(el)=>this.ref이름=el}```
+    - **React.createRef()방식** (z속도가 빠르지만 크게 차이 없음)
+
+ * CRUD
+    - 즐거웠다!
+ ---
