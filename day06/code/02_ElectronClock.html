@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../../cssReact/reset.css" />
+</head>
+
+<body>
+    <pre>
+
+    전자 시계를 만들면서 React의 클래스 컴포넌트 만드는 방법을 학습한다.
+    1. 클래스 컴포넌트를 만드시오.
+        컴포넌트명: ElectronClock
+    2. JSX 에서 style 작성법을 학습한다.     
+       font-size: 80pt;
+    3. 현재 시간 얻는 방법: 
+        const d = new Date();
+        const h = d.getHours();
+        const m = d.getMinutes();
+        const s = d.getSeconds();
+    4. 매초 렌더링의 개념을 익한다. 
+        window.setInterval(함수, 시간) 사용 
+
+
+    기능 추가 : 
+        오전인 경우 숫자앞에 0 붙이고 마지막 2개 글자 추출하기 : substr()
+        var href = "004";
+        var ext = href.substr(-2); // href.substr(href.lenght-2, 2);
+
+
+    작업순서
+        1. "rt07-13.ElectronClock" 예제에서 
+            setInterval() 부분을 컴포넌트 안으로 옮기시오. 
+            "rt13-03.TickTock" 예제 참조
+
+
+    <img src="../../imgReact/electronclock.png" alt="">
+
+    </pre>
+    <hr>
+
+    <div id="app"></div>
+</body>
+
+</html>
+
+<!-- react 플러그인 include   -->
+<!-- 주의: 사이트를 배포할 때는 "development.js"를 "production.min.js"로 대체하세요. -->
+
+
+<!-- react 플러그인 include   -->
+<!-- 주의: 사이트를 배포할 때는 "development.js"를 "production.min.js"로 대체하세요. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js">/* JSX를 자바스크립트로 변환 */</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.12.0/umd/react.development.js"> /* import { React} from "react"; */</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.11.0/umd/react-dom.development.js">/* import { ReactDOM } from "react-dom"; */</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.5/redux.js"> /* import {Redux} from "redux"; */ </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-redux/7.2.2/react-redux.js">/* import {ReactRedux} from "react-redux"; */</script>
+<script type="text/babel">
+    //import React from "react";
+    //import ReactDOM from "react-dom"
+    
+    console.log(React);
+    console.log(ReactDOM);
+    
+    class ElectronClock extends React.Component {
+    
+        static defaultProps = {  /*  props의 디폴트 값 설정 */  } 
+        static propsTypes = {  /* props의 프로퍼티 타입 설정 */ } 
+        state = {
+            // 상태값(변수)을 정의한다.
+            timer : null,    
+            hms : null,
+        }
+        style = {
+            // 컴포넌트 내부에서 사용할 인라인 스타일을 정의한다.
+            style1 : {
+                fontSize : "80pt",
+            },
+        }
+        addZero(val){
+            var href = "00"+val;
+            var ext = href.substr(-2);
+            return ext;
+        }
+        componentDidMount() {
+            // 마운트 완료 후에  : 페이지 load 될 때 한번
+            this.state.timer = window.setInterval( 
+                ()=>{
+
+                    const d = new Date();
+                    const h = this.addZero(d.getHours());
+                    const m = this.addZero(d.getMinutes());
+                    const s = this.addZero(d.getSeconds());
+
+                    // this.state.hms = `${h}:${m}:${s}`;
+
+                    this.setState({
+                        // setState = 상태/화면 변경해야하는 경우 사용한다.
+                        ...this.state,//필수
+                        hms : `${h}:${m}:${s}`,
+                    })
+                }
+                ,1000 //1000ms
+            );
+        }
+        render() {
+
+            return (
+                <div style={this.style.style1}>
+                    {this.state.hms}
+                </div>
+                );
+            }
+        }
+            
+    ReactDOM.render(<ElectronClock></ElectronClock>,document.getElementById("app"));
+</script>
